@@ -33,10 +33,18 @@ Accessing IF97 from your software
 ---------------------------------
 
 There is a `wrappers` directory for 3rd party applications, including:
-- Mathcad 15 (Jeff Henning main contributor, use with `cmake .. -DIF97_MATHCAD15_MODULE=ON; cmake --build . --config Release`)
-- Mathcad Prime (Jeff Henning main contributor, use with `cmake .. -DIF97_PRIME_MODULE=ON; cmake --build . --config Release`)
+- [Mathcad 15](wrapper/Mathcad) (Jeff Henning main contributor)
+- [Mathcad Prime](wrapper/Mathcad) (Jeff Henning main contributor)
 
-Furthermore, there is an interface library target that installs the header file. This target can also be digested by other CMake-based projects using the `add_subdirectory` command. Enable it with the CMake option `cmake .. -DIF97_CMAKE_MODULE=ON`.
+See each wrapper directory README for instructions on building and installing each.
+
+Furthermore, there is an interface library target that installs the header file. This target can also be digested by other CMake-based projects using the `add_subdirectory` command. Enable it like this:
+
+```
+mkdir buildIL
+cd buildIL
+cmake .. -DIF97_CMAKE_MODULE=ON
+```
 
 
 Compiler Switches
